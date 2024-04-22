@@ -5,11 +5,18 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
   end
 
+  # def create
+  #   book = Book.new
+  #   book.user_id = current_user.id
+  #   book.save
+  #   redirect_to book_path(book.id)
+  # end
+
   def show
     @book = Book.new
     @user = User.find(params[:id])
-    @books = @user.books
     @user_id = current_user.id
+    @books = @user.books
   end
 
   def edit
