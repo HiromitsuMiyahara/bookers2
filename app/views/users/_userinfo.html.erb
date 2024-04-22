@@ -1,0 +1,21 @@
+<h2>User info</h2>
+<!-- モックのため、固定値や未実装になっている部分があります。アプリ完成前に修正しましょう。 -->
+  <table class='table'>
+    <tr>
+      <%= image_tag user.get_profile_image(100,100) %>  <!-- 固定値 -->
+    </tr>
+    <tr>
+      <th>name</th>
+      <th><%= user.name %></th>  <!-- 固定値 -->
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th><%= user.introduction %></th>  <!-- 固定値 -->
+    </tr>
+  </table>
+<div class='row'>
+<!-- 編集リンクが未実装 -->
+  <a class="btn btn-outline-secondary btn-block" href="edit_book_path(book.id)">
+    <i class="fas fa-user-cog"></i>
+  </a>
+</div>
