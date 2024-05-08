@@ -1,0 +1,19 @@
+<% if book.favorited_by?(current_user) %>
+  <p>
+    <%= link_to book_favorites_path(book), method: :delete, remote: true do %> 
+      <i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
+      <%= book.favorites.count %>
+    <% end %>
+  </p>
+    <% else %>
+  <p>
+    <%= link_to book_favorites_path(book), method: :post, remote: true do %>
+      <i class="fas fa-heart" aria-hidden="true"></i>
+      <%= book.favorites.count %>
+    <% end %>
+  </p>
+<% end %>
+
+<!--remote: trueは非同期通信を行うためのオプション-->
+<!--Railsではデフォルトで非同期通信を処理するためのライブラリが組み込まれているため、-->
+<!--実装することによりページがリロードされることなく変更を反映することができる-->
